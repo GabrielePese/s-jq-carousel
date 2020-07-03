@@ -1,4 +1,6 @@
 $(document).ready(function(){
+// PARTE KEYBOARD
+
 
   $(".next").click (function (){
 
