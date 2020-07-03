@@ -1,16 +1,31 @@
 $(document).ready(function(){
 
   $(".next").click (function (){
-    if ($(".slider-wrapper img").hasClass("active") == true) {
-      $(".slider-wrapper img").removeClass ("active") && $(".slider-wrapper img").next().addClass("active");
 
-  }
+    var imgActive = $(".slider-wrapper img.active")
+      imgActive.removeClass ("active");
 
+
+      if (imgActive.hasClass("last") == true) {
+        $(".slider-wrapper img.first")  .addClass("active");
+      }
+    else {
+        imgActive.next().addClass("active");
+    }
+
+});
+$(".prev").click (function (){
+
+  var imgActive = $(".slider-wrapper img.active")
+    imgActive.removeClass ("active");
+
+
+    if (imgActive.hasClass("first") == true) {
+      $(".slider-wrapper img.last")  .addClass("active");
+    }
   else {
-    $(this).addClass("active")
-
+      imgActive.prev().addClass("active");
   }
-
 
 });
 });
